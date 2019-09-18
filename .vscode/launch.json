@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BitAnd",
+            "request": "launch",
+            "mainClass": "BitAnd",
+            "projectName": "JAVA_f9c11f24"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BitManipulation",
+            "request": "launch",
+            "mainClass": "BitManipulation",
+            "projectName": "JAVA_f9c11f24"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SpiralArray",
+            "request": "launch",
+            "mainClass": "SpiralArray"
+        }
+    ]
+}
