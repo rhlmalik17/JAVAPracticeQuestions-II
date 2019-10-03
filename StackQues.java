@@ -1,10 +1,10 @@
 /*Stack Using Arrays*/
-public class Stack
+public class StackQues
 {
     int arr[];
     int top;
     int expandBy=2;
-    public Stack()
+    public StackQues()
     {
         arr=new int[2];
         top=-1;

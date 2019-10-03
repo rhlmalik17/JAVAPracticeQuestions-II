@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StackUsingLinkedList",
+            "request": "launch",
+            "mainClass": "StackUsingLinkedList",
+            "projectName": "JAVA_f9c11f24"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LinkedListQuestionn",
             "request": "launch",
             "mainClass": "LinkedListQuestionn",

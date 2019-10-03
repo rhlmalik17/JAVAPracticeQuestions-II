@@ -11,6 +11,7 @@ public class quickSort
     }
     public int partition(int arr[],int s,int e)
     {
+
         int k=s;
         
             for(int i=s;i<e;i++)
@@ -38,7 +39,7 @@ public class quickSort
     public static void main(String args[])
     {
         quickSort obj = new quickSort();
-        int arr[]={15,10,9,6,5,16,11};
+        int arr[]={1,2,4,3,5};
         obj.sortIt(arr,0,arr.length-1);
         Display(arr);
     }
