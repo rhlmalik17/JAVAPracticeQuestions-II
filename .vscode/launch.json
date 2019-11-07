@@ -2,6 +2,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PrintSquares2DArray",
+            "request": "launch",
+            "mainClass": "PrintSquares2DArray"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DELTHIS",
+            "request": "launch",
+            "mainClass": "DELTHIS",
+            "projectName": "JAVA_f9c11f24"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StackUsingLinkedList",
             "request": "launch",
             "mainClass": "StackUsingLinkedList",
