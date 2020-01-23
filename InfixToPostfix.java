@@ -1,93 +1,53 @@
-import java.util.Collections;
-import java.util.Stack;
-public class InfixToPostfix{
-    public static boolean ifOperator(char input)
-    {
-        char arr[]={'+','-','*','/','(',')'};
-        for(int i=0;i<arr.length;i++)
-        {
-            if(arr[i]==input)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+import java.lang.*;
+import java.io.*;
+import java.util.*;
 
-    public static int getPrecedance(char input)
-    {
-        int precedance=0;
+class InfixToPostfix {
+	public static void main (String[] args) {
+		//code
 
-        switch(input)
-        {
-            case '+':
-            precedance=2;
-            break;
-            case '-':
-            precedance=2;
-            break;
-            case '*':
-            precedance=3;
-            break;
-            case '/':
-            precedance=3;
-            break;
-            case '(':
-            precedance=1;
-            break;
-            case ')':
-            precedance=1;
-            break;
-        }
-
-        return precedance;
-    }
-
-    public static void infixToPostFix(String input)
-    {
-        StringBuffer postFix = new StringBuffer();
-        Stack<Character> stack = new Stack<>();
-        for(int i=0;i<input.length();i++)
-        {
-            if(ifOperator(input.charAt(i)))
-            {
-                if(stack.isEmpty())
-                {
-                    stack.push(input.charAt(i));
-                }
-                else
-                {
-                    if(input.charAt(i)=='(')
-                    {
-                        stack.push(input.charAt(i));
-                    }
-                    else if(input.charAt(i)==')')
-                    {
-                        while(stack.isEmpty()==false && stack.peek()!='(')
-                        {
-                            postFix.append(stack.pop());
-                        }
-                      stack.pop();
-                    }
-                    else
-                    {
-                        while(stack.isEmpty()==false && getPrecedance(input.charAt(i))<getPrecedance(stack.peek()))
-                        {
-                            postFix.append(stack.pop());
-                        }
-                        stack.push(input.charAt(i));
-                    }
-                }
-            }
-            else
-            {
-                postFix.append(input.charAt(i));
-            }
-        }
-        System.out.println(postFix.toString());
-    }
-    public static void main(String args[])
-    {
-        infixToPostFix("A+B-C");
-    }
-}
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		while(n--!=0)
+		{
+		    Stack <Character> obj=new Stack<>();
+		    String str=sc.next();
+		    String ans="";
+		    for(int i=0;i<str.length();i++){
+		        char c=str.charAt(i);
+		        if(Character.isLetterOrDigit(c))
+		        ans=ans+c;
+		        else if(c=='(')
+		        obj.push(c);
+		        else if(c==')')
+		        {
+		            while(!obj.isEmpty()&&obj.peek()!='(')
+		            ans=ans+obj.pop();
+		            obj.pop();
+		        }
+		        else
+		        {
+		            while(!obj.isEmpty()&&prec(c)<=prec(obj.peek()))
+		            ans=ans+obj.pop();
+		            obj.push(c);
+		        }
+		    }
+		            while(!obj.isEmpty())  
+		            ans=ans+obj.pop();
+		            System.out.println(ans);		
+		        
+        	}
+		}
+			 static int prec(char c){
+		        switch(c)
+		        {
+		            case '+':
+		            case '-':return 1;
+		            case '/':
+		            case '*':return 2;
+		            case '^':return 3;
+		            case '(':return -1;
+		        }
+		        return 0;
+		    }
+	}

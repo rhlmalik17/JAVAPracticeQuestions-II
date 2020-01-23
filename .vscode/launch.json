@@ -2,6 +2,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReverseVowels",
+            "request": "launch",
+            "mainClass": "ReverseVowels",
+            "projectName": "JAVA_f9c11f24"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SortByFrequency",
+            "request": "launch",
+            "mainClass": "SortByFrequency"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PrintSquares2DArray",
             "request": "launch",
             "mainClass": "PrintSquares2DArray"

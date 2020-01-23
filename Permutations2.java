@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.SortedSet;
 import java.util.TreeSet;
-public class PermutationsOfString
+public class Permutations2
 {
     public SortedSet<String> perms = new TreeSet<String>();
     public int fixedindex = 0;
@@ -29,6 +29,7 @@ public class PermutationsOfString
         if(index==arr.length-1)
         {
             addToHashSet(arr);
+            print(arr);
             return;
         }
         int s=index;
@@ -39,6 +40,13 @@ public class PermutationsOfString
             swap(arr,s,i);
         }
         
+    }
+    public void print(char[] arr)
+    {
+        String temp="";
+        for(int i=0;i<arr.length;i++)
+        temp+=arr[i];
+        System.out.println(temp);
     }
     public void addToHashSet(char arr[])
     {
@@ -56,8 +64,11 @@ public class PermutationsOfString
     }
     public static void main(String args[])
     {
-        PermutationsOfString obj = new PermutationsOfString();
-        obj.printPurms("ABCDE");
+        Permutations2 obj = new Permutations2();
+        String tc = "ABC";
+        char[] arr = tc.toCharArray();
+        obj.recurseAndAdd(arr, 0);
+
      
     }
 }
